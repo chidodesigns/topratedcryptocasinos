@@ -1,0 +1,22 @@
+@mixin centerItem {
+    margin: 0 auto;
+}
+
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin main-bg-color {
+    background-image: linear-gradient(to right bottom, rgba($primary-color, .85), rgba($secondary-color, .85));
+}

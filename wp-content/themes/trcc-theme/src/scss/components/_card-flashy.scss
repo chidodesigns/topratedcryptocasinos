@@ -1,0 +1,143 @@
+.card-flashy {
+    //  Card Functionality 
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 35rem;
+    border-radius: 10px;
+    &__side {
+        height: 32rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba($black, 0.2);
+        &--front {
+            background-color: $white;
+        }
+        &--back {
+            .card__casino--terms {
+                align-self: center;
+                border-bottom: none;
+                .tooltiptext {
+                    width: 70%;
+                    margin-top: -31%;
+                    margin-left: -52%;
+                }
+            }
+            transform: rotateY(180deg);
+            &-1 {
+                background-image: linear-gradient(to right bottom, rgba($primary-color, .85), rgba($secondary-color, .85));
+            }
+        }
+    }
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+    //  Front Card Styling
+    &__picture {
+        height: 13rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        img {
+            width: 70%;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-direction: clone;
+        color: $white;
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($primary-color, .85), rgba($secondary-color, .85));
+        }
+    }
+    &__details {
+        padding: 1.5rem;
+        ul {
+            list-style: none;
+            width: 100%;
+            margin: 0 auto;
+            li {
+                text-align: left;
+                font-size: 1rem;
+                padding: 1rem 0;
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+                i {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+    //  Back Side Styling
+    &__cta {
+        margin: 50% auto;
+        width: 90%;
+        text-align: center;
+    }
+    &__price-box {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: $white;
+    }
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+    &__price-value {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    //  Mob Version Of Card
+    @media (max-width: 768px),
+    (hover:none) {
+        height: 40rem;
+        border-radius: 3px;
+        background-color: $white;
+        margin-bottom: 32rem;
+        &__side {
+            height: auto;
+            position: relative;
+            box-shadow: none;
+            &--back {
+                transform: rotateY(0);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+            }
+        } //End Of Card Side
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+        &:hover &__side--back {
+            transform: rotateY(0);
+        }
+        &__details {
+            padding: 1rem 3rem;
+        }
+        //Back Side Styling
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 3.5rem 2rem 2rem 2rem;
+        }
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+        &__price-value {
+            font-size: 2rem;
+        }
+    }
+}

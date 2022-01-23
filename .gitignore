@@ -1,0 +1,12 @@
+coverage
+node_modules/
+.vscode/*
+simply-show-hooks
+show-current-template
+report.*
+/vendor/
+.env
+docker-compose.yml
+debug.log
+license.txt
+wp-config.php.save

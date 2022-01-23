@@ -1,0 +1,53 @@
+/* Footer */
+
+.footer {
+    overflow: hidden !important;
+    @include main-bg-color;
+    * {
+        color: $white;
+        transition: color 0.2s ease-in;
+        *>i:hover {
+            color: $info-color;
+        }
+    }
+}
+
+.footer nav li a,
+.footer .social {
+    @media (max-width: 768px) {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.footer nav li a:hover {
+    color: $info-color;
+}
+
+.footer .social a {
+    margin: 0 10px;
+    &:hover {
+        color: $info-color;
+    }
+}
+
+.footer-flex {
+    justify-content: space-between !important;
+    overflow: hidden !important;
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: baseline !important;
+        justify-content: space-evenly !important;
+        padding: 2rem 0;
+        .footer__logo-holder {
+            margin: 0 auto;
+        }
+        .copyright {
+            text-align: center;
+        }
+        nav {
+            margin-top: 1.5rem;
+        }
+    }
+}

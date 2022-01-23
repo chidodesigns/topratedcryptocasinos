@@ -1,0 +1,114 @@
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        //  Do not display table on any mobile device
+        @media (max-width: 768px) {
+            display: none;
+        }
+        .casino-table__header {
+            @include main-bg-color;
+            color: white;
+        }
+        td,
+        th {
+            border: none;
+            padding: 2%;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: $light-color;
+        }
+        i {
+            margin-right: 3%;
+        }
+        .casino-table__listing--welcome-bonus {
+            font-size: 1.2rem;
+            width: 25%;
+            p {
+                margin: 0;
+            }
+            .card__casino--terms {
+                .tooltiptext {
+                    width: 33.5%;
+                    margin-top: 1.7%;
+                    margin-left: -17%;
+                }
+            }
+        }
+        .casino-table__listing--casino-logo {
+            width: 25%;
+        }
+        .casino-table__listing--key-features {
+            width: 25%;
+            text-align: left;
+        }
+        .casino-table__listing-sign-up {
+            width: 20%;
+            button {
+                padding: 12%;
+                width: 100%;
+                color: $main-text-color;
+            }
+        }
+    }
+    
+    .casino-listings-attr {
+        @include centerItem;
+        width: 80%;
+        p {
+            text-transform: uppercase;
+            color: $primary-color;
+            font-size: 80%;
+            border: 1px solid $primary-color;
+            text-align: center;
+            padding: 2%;
+        }
+        i {
+            margin-right: 0.4rem;
+        }
+        @media (max-width: 768px) {
+            p {
+                text-align: center;
+            }
+        }
+        .tooltip {
+            .tooltiptext {
+                width: 21.5%;
+                margin-top: -3.5%;
+                margin-left: -8%;
+            }
+        }
+    }
+    
+    .casino-listings-monthly-date {
+        @media (max-width: 768px) {
+            h2 {
+                margin-top: 15%;
+                text-align: center;
+            }
+        }
+    }
+    
+    .crypto-exchange__listing--trading-fees,
+    .crypto-exchange__listing--deposit-methods,
+    .crypto-exchange__listing-sign-up-button {
+        text-align: left;
+        width: 25%;
+    }
+    
+    .crypto-exchange__listing--fiat-currencies {
+        width: 15%;
+        text-align: left;
+    }
+    
+    .crypto-exchange__listing--key-features {
+        width: 26%;
+        text-align: left;
+    }
+    
+    .crypto-exchange__listing--logo {
+        width: 20%;
+    }

@@ -1,0 +1,177 @@
+/* Showcase */
+
+.showcase {
+    height: 400px;
+    @include main-bg-color;
+    color: $white;
+    position: relative;
+}
+
+.showcase h1 {
+    font-size: 40px;
+    @media (max-width: 768px) {
+        margin: 2rem 0;
+    }
+}
+
+.showcase-text-alt {
+    margin-top: -20%;
+}
+
+.showcase p {
+    margin: 10px 0;
+    @media (max-width: 768px) {
+        margin: 1rem 0;
+    }
+}
+
+.showcase .grid {
+    overflow: visible;
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+}
+
+.showcase-text {
+    margin-top: -20%;
+    animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase-form {
+    position: relative;
+    top: 20px;
+    height: 500px;
+    width: 100%;
+    padding: 20px;
+    // z-index: 1;
+    @media (min-width: 768px) {
+        z-index: 100;
+    }
+    justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in;
+    @media (max-width: 768px) {
+        width: 300px;
+        height: 400px;
+        button {
+            margin-top: 5%;
+        }
+    }
+    button {
+        color: #333 !important;
+    }
+    img {
+        width: 55%;
+    }
+}
+
+.showcase::before,
+.showcase::after {
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: $white;
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+    @media (max-width: 768px) {
+        z-index: -1;
+    }
+}
+
+
+/* Stats */
+
+.stats {
+    @media (min-width: 770px) {
+        padding-top: 79px;
+    }
+    animation: slideInFromBottom 1s ease-in;
+    .section__lead-text {
+        width: 100%;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .tooltiptext {
+            width: 21.5%;
+            margin-top: 2%;
+            margin-left: -20%;
+        }
+    }
+}
+
+
+/* Cloud */
+
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+.cloud {
+    @include main-bg-color;
+    color: $white;
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}
+
+
+/* Languages */
+
+.languages .flex {
+    flex-wrap: wrap;
+}
+
+.languages .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+
+.languages .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover {
+    transform: translateY(-15px);
+}
+
+.languages-alt .card:hover {
+    transform: none;
+}
+
+
+/* Trading View Widget Begin*/
+
+.tradingview-widget-container {
+    margin: 0 auto;
+}
+
+.crypto-market-widget,
+.tradingview-widget-container,
+.tv-embed-widget-wrapper,
+.ad-disclosure {
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+
+/* Bitcoin Section */
+
+#bitcoin {
+    .tooltip {
+        .tooltiptext {
+            width: 21.5%;
+            margin-top: 2%;
+            margin-left: -8%;
+        }
+    }
+}

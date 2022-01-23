@@ -1,0 +1,200 @@
+/* Navbar Styling */
+
+//  Hide All Mob Header/Menu Versions
+.menu-wrap {
+    display: none;
+}
+
+.logo {
+    margin: 0;
+}
+
+.navbar {
+    @include main-bg-color;
+    position: sticky;
+    color: $white;
+    height: 70px;
+    width: 100%;
+    z-index: 1;
+    top: 0px;
+    padding: 0 30px;
+    transition: 0.5s;
+}
+
+.navbar.top {
+    @include main-bg-color;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a,
+footer nav a {
+    color: $white;
+    padding: 10px;
+    margin: 0 5px;
+    transition: color 0.2s ease-in;
+}
+
+.navbar a:hover,
+footer nav a:hover {
+    color: $info-color;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+@media(max-width: 768px) {
+    .navbar {
+        height: 350px;
+        position: relative;
+    }
+    .navbar .flex {
+        flex-direction: column;
+    }
+    .navbar ul {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+    }
+}
+
+/////////// MOBILE MENU /////////////////
+@media (max-width:768px) {
+    //  hide desktop menu
+    .desktop-menu {
+        display: none;
+    }
+    .menu-wrap {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .menu-wrap .toggler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+    .menu-wrap .hamburger {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        padding: 1rem;
+        background: $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /*Hamburger Line*/
+    .menu-wrap .hamburger .hamburger--single-lines {
+        position: relative;
+        flex: none;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+    /*Hamburger Lines - Top & Bottom */
+    .menu-wrap .hamburger .hamburger--single-lines::before,
+    .menu-wrap .hamburger .hamburger--single-lines::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: inherit;
+    }
+    /*  Moves line Down */
+    .menu-wrap .hamburger .hamburger--single-lines::after {
+        top: 10px;
+    }
+    /* Toggle Animation */
+    .menu-wrap .toggler:checked+.hamburger.hamburger--single-lines {
+        transform: rotate(135deg);
+    }
+    /*  This turns lines into X*/
+    .menu-wrap .toggler:checked+.hamburger .hamburger--single-lines::before,
+    .menu-wrap .toggler:checked+.hamburger .hamburger--single-lines::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    /*Rotate On Hover when checked*/
+    .menu-wrap .toggler:checked:hover+.hamburger .hamburger--single-lines {
+        transform: rotate(225deg);
+    }
+    /*Show Menu - ~ enables us to target an element that precedes this element*/
+    .menu-wrap .toggler:checked~.menu {
+        visibility: visible;
+    }
+    .menu-wrap .toggler:checked~.menu .menu--overlay {
+        transform: scale(1);
+        transition-duration: 0.75s;
+    }
+    .menu-wrap .toggler:checked~.menu .menu--overlay .menu--links-container {
+        opacity: 1;
+        transition: opacity 0.4s ease-in 0.4s;
+    }
+    .menu-wrap .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Overlay*/
+    .menu-wrap .menu .menu--overlay {
+        @include main-bg-color;
+        border-radius: 50%;
+        width: 200vw;
+        height: 250vw;
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0);
+        transition: all 0.4s ease;
+    }
+    .menu-wrap .menu .menu--overlay .menu--links-container {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    .menu-wrap .menu .menu--overlay .menu--links-container ul>li {
+        list-style: none;
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    .menu-wrap .menu .menu--overlay .menu--links-container ul>li>a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.4s ease;
+    }
+    .menu-wrap .menu .menu--overlay .menu--links-container ul>li>a:hover {
+        color: $info-color;
+    }
+}

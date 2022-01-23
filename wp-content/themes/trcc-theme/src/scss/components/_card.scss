@@ -1,0 +1,114 @@
+.card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+    @media (max-width: 768px) {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.card__casino {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &--img {
+        width: 70%;
+        @include centerItem;
+    }
+    &--terms {
+        align-self: flex-end;
+        font-size: 70%;
+        border-bottom: 1px dotted $primary-color;
+        .tooltiptext {
+            @media (max-width: 500px) {
+                right: 18px;
+                top: 40px;
+                width: 60%;
+            }
+        }
+    }
+    button {
+        @media (min-width: 768px) {
+            width: 50%;
+        }
+        @include centerItem;
+    }
+    i {
+        margin-right: 2%;
+    }
+}
+
+.casino-table__mob-version {
+    margin-top: 10%;
+    margin-bottom: 2%;
+    text-align: center;
+    //  Hide On Desktop
+    @media (min-width: 768px) {
+        display: none;
+    }
+    button {
+        margin: 0 auto;
+        margin-top: 10%;
+        display: block;
+        font-size: 1.3rem;
+    }
+}
+
+.card__logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 200px;
+    max-height: 200px;
+    img {
+        width: 80%;
+    }
+    @media (max-width: 768px) {
+        padding: 10px;
+    }
+    .image-link {
+        width: 50%;
+    }
+    .button-link {
+        width: 50%;
+    }
+    .sign-up-bonus-link {
+        @media (min-width: 770px) {
+            width: 70%;
+            text-align: center;
+            display: block;
+        }
+        display: none;
+    }
+    .card__casino--terms {
+        align-self: center;
+        border-bottom: none;
+        .tooltiptext {
+            width: 33.5%;
+            margin-top: 2.2%;
+            margin-left: -32.1%;
+        }
+    }
+    button {
+        @media (max-width: 768px) {
+            padding: .6rem .6rem;
+            border-radius: 3px;
+        }
+    }
+}
+
+.card__column-direction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 25%;
+    }
+    @media (max-width:768px) {
+        margin: 0 auto !important;
+    }
+}
